@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://em-content.zobj.net/source/microsoft-teams/363/notebook_1f4d3.png">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+    integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>Jot</title>
+</head>
+
+<body class="bg-secondary-subtle">
+  <!-- SECTION -->
+  <header>
+    <nav class="navbar navbar-dark navbar-expand bg-danger-subtle text-dark px-2">
+      <a class="navbar-brand" href="#">
+        <img src="https://em-content.zobj.net/source/microsoft-teams/363/notebook_1f4d3.png" height="45" alt=""
+          loading="lazy">
+        <span class="ml-2 text-dark fw-bold">Jot</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <!-- NAVLINKS -->
+          <!-- <a href="#/about" class="nav-link">About</a> -->
+        </div>
+      </div>
+      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+    </nav>
+  </header>
+
+  <!-- SECTION -->
+  <main class="container-fluid">
+    <section class="row">
+      <div class="col card rounded-4 m-2 p-2 bg-danger-subtle">
+        <div class="fw-bold d-flex justify-content-end text-dark"><span><i
+              class="mdi mdi-notebook-multiple"></i>:</span><span id="jot-count">0</span></div>
+        <p class="fw-bold text-dark">Add a Jot</p>
+        <form onsubmit="app.JotsController.createJot()" class="row">
+          <div class="input-group p-2">
+            <input class="rounded-4 form-control form-control-color" type="color" name="color" id="jot-color"
+              label="jot-color" required>
+            <input type="text" minlength="3" maxlength="15"
+              class="border border-secondary bg-secondary-subtle form-control rounded-4 w-50 text-dark"
+              placeholder="Title" name="title" id="jot-title" required>
+            <button title="Add a Jot" class="btn btn-danger rounded-4">ADD +</button>
+          </div>
+        </form class="row">
+        <section id="jots-list" class="row p-2">
+        </section>
+      </div>
+
+      <div id="active-jot" class="card col-md-8 bg-info-subtle g-3 m-2">
+        <!-- <div class="d-flex fw-bold fs-4">
+          <h2><i style: "color ${this.color}" class="mdi mdi-notebook"></i>Title</h2>
+        </div>
+        <p>Created On: 11/11/2024</p>
+        <p>Last Updated: Wednesday 11/11/2024 11:11 am</p>
+        <div class="p-2">
+          <p class="bg-white border rounded p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse incidunt
+            perferendis iure
+            adipisci minima voluptate excepturi cumque, facilis aperiam amet! Magni omnis ut amet consequatur eos
+            nesciunt at expedita molestiae!</p>
+        </div> -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SECTION -->
+  <footer class="bg-secondary-subtle text-dark">
+    <div class="text-center no-select">
+      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+
+  <script src="app/App.js" type="module"></script>
+</body>
+
+</html>
